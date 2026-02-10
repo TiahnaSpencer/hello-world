@@ -1,0 +1,7 @@
+#include <iostream> 
+using namespace std; 
+    int main ()
+{ 
+ int Milesdriven = 375, Gallonsused = 15, MPG = Milesdriven/Gallonsused;
+    cout<<MPG;
+}
