@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    double numbergal = 20, townavgmiles = 23.5, highavgmiles = 28.9;
+    double highdis = numbergal * highavgmiles;
+    double towndis = numbergal * townavgmiles;
+     cout << "Distance on highway \n" << highdis;
+     cout << "\nDistance in town\n" << towndis << endl;
+    return 0;
+}
