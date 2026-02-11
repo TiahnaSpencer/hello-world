@@ -1,0 +1,6 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ cout << "Tiahna Spencer\n" "\n123 Sesame Street, Sesame, 12345\n" "\n123-456-7890\n" "\nEngineer\n";
+}
