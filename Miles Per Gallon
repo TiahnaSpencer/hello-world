@@ -5,3 +5,4 @@ using namespace std;
  int Milesdriven = 375, Gallonsused = 15, MPG = Milesdriven/Gallonsused;
     cout<<MPG;
 }
+ 
