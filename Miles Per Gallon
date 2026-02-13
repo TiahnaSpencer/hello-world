@@ -1,6 +1,7 @@
 #include <iostream> 
 using namespace std; 
     int main ()
+// This code will calculate the Miles per Gallon
 { 
  int Milesdriven = 375, Gallonsused = 15, MPG = Milesdriven/Gallonsused;
     cout<<"the MPG is\n" << MPG;
