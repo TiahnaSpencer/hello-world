@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 int main()
+//This code calculates the distance per tank of gas on a highway/in a town
 {
     double numbergal = 20, townavgmiles = 23.5, highavgmiles = 28.9;
     double highdis = numbergal * highavgmiles;
