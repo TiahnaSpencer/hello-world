@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{ 
+    //calculate monthly and annual costs
+    float LP = 0;
+    float I = 0;
+    float G = 0;
+    float O = 0;
+    float T = 0;
+    float M = 0;
+    
+    //input loan payment
+  cout << "Enter loan payment costs ";
+cin >> LP;
+
+//input insurance costs
+cout << "Enter insurance costs ";
+cin >> I;
+
+//input gas costs
+cout << "Enter gas costs ";
+cin >> G;
+   
+   //input oil costs
+   cout << "Enter oil costs ";
+   cin >> O;
+   
+   //input tire costs
+   cout << "Enter tire costs ";
+   cin >> T;
+   
+   //input maintenance costs
+   cout << "Enter maintenance costs ";
+   cin >> M;
+   
+  int monthlyCost = LP+I+G+O+T+M;
+ 
+   cout << "Monthly cost is\n" << monthlyCost; 
+   
+   int annualCost = monthlyCost * 12;
+  
+   cout << "\nannual cost is\n" << annualCost;
