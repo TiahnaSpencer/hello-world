@@ -1,0 +1,187 @@
+
+#include <cmath>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int female;
+	int male;
+
+
+	//input normal, carrier, or colorblind female
+	cout << "1 for normal female\n2 for carrier female\n3 for colorblind female\n";
+	cin >> female;
+
+	//input normal or colorblind male
+	cout << "1 for normal male\n2 for colorblind male\n";
+	cin >> male;
+
+if (female==1&&male==1) {
+cout << "                 X                     Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  X   |        XX          |          XY       |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XX          |          XY       |\n";
+cout << "   X  |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";
+
+    //list genotype and phenotype for normal female and male
+cout << "Chance of Colorblind Female: 0%\n";
+cout << "Chance of Colorblind Male: 0%\n";
+cout << "Chance of Carrier Female: 0%\n";
+cout << "Chance of Normal Male: 50%\n";
+cout << "Chance of Normal Female:50%\n";
+} 
+
+else if (female==1&&male==2) 
+{
+cout << "               Xc                     Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  X   |        XXc         |          XY       |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XXc         |          XY       |\n";
+cout << "  X   |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";
+
+    
+cout << "Chance of Colorblind Female: 0%\n";
+cout << "Chance of Colorblind Male: 0%\n";
+cout << "Chance of Carrier Female: 50%\n";
+cout << "Chance of Normal Male: 50%\n";
+cout << "Chance of Normal Female:0%\n";
+}    
+else if (female==2&&male==1)
+ {  
+cout << "               X                      Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  X   |        XX          |          XY       |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XXc         |          XcY      |\n";
+cout << "  Xc  |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";
+
+cout << "Chance of Colorblind Female: 0%\n";
+cout << "Chance of Colorblind Male: 25%\n";
+cout << "Chance of Carrier Female: 25%\n";
+cout << "Chance of Normal Male: 25%\n";
+cout << "Chance of Normal Female:25%\n";
+ }
+ else if (female==2&&male==2) 
+ {
+ cout << "               Xc                     Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  X   |        XXc         |          XY       |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XcXc        |          XcY      |\n";
+cout << "  Xc  |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";    
+     
+cout << "Chance of Colorblind Female: 25%\n";
+cout << "Chance of Colorblind Male: 25%\n";
+cout << "Chance of Carrier Female: 25%\n";
+cout << "Chance of Normal Male: 25%\n";
+cout << "Chance of Normal Female:0%\n";
+ }
+else if (female==3&&male==1)
+{
+cout << "               X                      Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  Xc  |        XXc         |          XcY      |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XXc         |          XcY      |\n";
+cout << "  Xc  |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";     
+
+cout << "Chance of Colorblind Female: 0%\n";
+cout << "Chance of Colorblind Male: 50%\n";
+cout << "Chance of Carrier Female: 50%\n";
+cout << "Chance of Normal Male: 0%\n";
+cout << "Chance of Normal Female:0%\n";
+} else if (female==3&&male==2)  {    
+cout << "               Xc                      Y\n";
+cout << "      ------------------------------------------\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "  Xc  |        XcXc        |         XcY       |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |_ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |        XcXc        |         XcY       |\n";
+cout << "  Xc  |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      |                    |                   |\n";
+cout << "      ------------------------------------------\n";    
+
+cout << "Chance of Colorblind Female: 50%\n";
+cout << "Chance of Colorblind Male: 50%\n";
+cout << "Chance of Carrier Female: 0%\n";
+cout << "Chance of Normal Male: 0%\n";
+cout << "Chance of Normal Female:0%\n";
+}
+else { cout<<"Error. Restart program you idiot.";
+}
+}
+
+
+
+
