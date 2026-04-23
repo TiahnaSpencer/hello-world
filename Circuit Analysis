@@ -1,0 +1,131 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// input validation
+
+void clearInput() {
+    cin.clear();
+    cin.ignore(10000, '\n');
+}
+
+// Get a valid integer between 1 and 4
+int getResistorCount() {
+    int value;
+    while (true) {
+        cout << "Enter number of resistors (1–4): ";
+        cin >> value;
+
+        if (cin.fail() || value < 1 || value > 4) {
+            cout << "Invalid input. Enter a number between 1 and 4.\n";
+            clearInput();
+        } else {
+            return value;
+        }
+    }
+}
+
+// Get a valid positive double
+double getPositiveDouble(const string& prompt) {
+    double value;
+    while (true) {
+        cout << prompt;
+        cin >> value;
+
+        if (cin.fail() || value <= 0) {
+            cout << "Invalid input. Enter a value greater than 0.\n";
+            clearInput();
+        } else {
+            return value;
+        }
+    }
+}
+
+// Get resistor values
+vector<double> getResistors(int n) {
+    vector<double> resistors;
+    for (int i = 1; i <= n; i++) {
+        resistors.push_back(getPositiveDouble("Enter resistance R" + to_string(i) + ": "));
+    }
+    return resistors;
+}
+
+// calculations
+
+double totalResistanceSeries(const vector<double>& resistors) {
+    double total = 0;
+    for (double r : resistors) total += r;
+    return total;
+}
+
+double totalResistanceParallel(const vector<double>& resistors) {
+    double sum = 0;
+    for (double r : resistors) {
+        if (r == 0) return 0;
+        sum += 1.0 / r;
+    }
+    return (sum == 0) ? 0 : 1.0 / sum;
+}
+
+double calculateSeriesCurrent(double voltage, double totalResistance) {
+    if (totalResistance == 0) return 0;
+    return voltage / totalResistance;
+}
+
+vector<double> voltageDropsSeries(const vector<double>& resistors, double current) {
+    vector<double> drops;
+    for (double r : resistors) {
+        drops.push_back(current * r);
+    }
+    return drops;
+}
+
+vector<double> currentsParallel(const vector<double>& resistors, double voltage) {
+    vector<double> currents;
+    for (double r : resistors) {
+        currents.push_back((r == 0) ? 0 : voltage / r);
+    }
+    return currents;
+}
+
+// output
+
+void displayResults(
+    double seriesR,
+    double parallelR,
+    const vector<double>& vDrops,
+    const vector<double>& currents
+) {
+    cout << "\n--- Results ---\n";
+
+    cout << "Total Resistance (Series): " << seriesR << " ohms\n";
+    cout << "Voltage Drops (Series):\n";
+    for (size_t i = 0; i < vDrops.size(); i++) {
+        cout << "R" << i + 1 << ": " << vDrops[i] << " V\n";
+    }
+
+    cout << "\nTotal Resistance (Parallel): " << parallelR << " ohms\n";
+    cout << "Currents (Parallel):\n";
+    for (size_t i = 0; i < currents.size(); i++) {
+        cout << "R" << i + 1 << ": " << currents[i] << " A\n";
+    }
+}
+
+// main
+int main() {
+    int n = getResistorCount();
+    vector<double> resistors = getResistors(n);
+    double voltage = getPositiveDouble("Enter total voltage: ");
+
+    double seriesR = totalResistanceSeries(resistors);
+    double current = calculateSeriesCurrent(voltage, seriesR);
+    vector<double> vDrops = voltageDropsSeries(resistors, current);
+
+    double parallelR = totalResistanceParallel(resistors);
+    vector<double> currents = currentsParallel(resistors, voltage);
+
+    displayResults(seriesR, parallelR, vDrops, currents);
+
+    return 0;
+}
+
