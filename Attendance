@@ -6,8 +6,15 @@ using namespace std;
 
 vector<string>attendance = {"Envy ", "Ilyas ", "Damon ", "Hamir " ,"Ajay ", "Bode ", "George ", "Jordan ", "Chris ", "Caleb ", "Seth ", "Ryan ", "Tiahna ", "Bailin ", "Elijah ", "Connor "};
 
+bool isValidInput(string input) {
+  if (input == "0" || input == "1") {
+    return true;
+  }
+  return false;
+}
+
 int main() {
-  int answer;
+  string answer;
   string date;
  
   cout << "Please enter todays date (MM/DD/YY): ";
@@ -19,18 +26,20 @@ int main() {
     cout << "Is " << attendance[i] << "here? (1 for yes, 0 for no): ";
     cin >> answer;
     
-    if (answer == 1) {
+    while (!isValidInput(answer)) {
+      cout << "Invalid input. Please enter 1 or 0: ";
+      cin >> answer;
+    }
+    
+    if (answer == "1") {
       MyFile << attendance[i] << " is present.\n\n";
       cout << attendance[i] << " is present.\n\n";
-    } else if (answer == 0) {
+    } else if (answer == "0") {
       MyFile << attendance[i] << " is absent.\n\n";
       cout << attendance[i] << " is absent.\n\n";
-    } else {
-      cout << "Invalid input. Please enter 1 or 0.\n\n";
     }
   }
   
   MyFile.close();
   return 0;
 }
-  
