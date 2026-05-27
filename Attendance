@@ -7,24 +7,15 @@ using namespace std;
 vector<string>attendance = {"envy ", "ilyas ", "damon ", "hamir " ,"ajay ", "bode ", "george ", "jordan ", "chris ", "caleb ", "seth ", "ryan ", "tiahna ", "bailin ", "elijah ", "connor "};
 
 int main() {
-  string input;
   int answer;
-  bool validInput;
 
-  for (int i = 0; i < attendance.size(); i++) {
-    validInput = false;
+ 
     
-    while (!validInput) {
-      cout << "Is " << attendance[i] << "here? (1 for yes, 0 for no): ";
-      cin >> input;
-      
-      // Check if input is exactly one character and is either '0' or '1'
-      if (input.length() == 1 && (input[0] == '0' || input[0] == '1')) {
-        answer = stoi(input);
-        validInput = true;
-      } else {
-        cout << "Invalid input. Please enter 1 (yes) or 0 (no).\n";
-      }
+    int number;
+do {
+  cout << "Choose a number between 1 and 5: ";
+  cin >> number;
+} while (number < 1 || number> 5);
     }
     
     if (answer == 1) {
