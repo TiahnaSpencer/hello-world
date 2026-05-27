@@ -4,26 +4,30 @@
 #include <fstream>
 using namespace std;
 
-vector<string>attendance = {"envy ", "ilyas ", "damon ", "hamir " ,"ajay ", "bode ", "george ", "jordan ", "chris ", "caleb ", "seth ", "ryan ", "tiahna ", "bailin ", "elijah ", "connor "};
+vector<string>attendance = {"Envy ", "Ilyas ", "Damon ", "Hamir " ,"Ajay ", "Bode ", "George ", "Jordan ", "Chris ", "Caleb ", "Seth ", "Ryan ", "Tiahna ", "Bailin ", "Elijah ", "Connor "};
 
 int main() {
   int answer;
-
+  int date;
  
-    
-    int number;
-do {
-  cout << "Choose a number between 1 and 5: ";
-  cin >> number;
-} while (number < 1 || number> 5);
-    }
+   cout << "Please enter todays date (MM/DD/YY)";
+   cin >> date;
+
+  ofstream MyFile((date)+".txt");
+
+ MyFile <<  for (int i = 0; i < attendance.size(); i++) {
+    cout << "Is " << attendance[i] << "here? (1 for yes, 0 for no): ";
+    cin >> answer;
     
     if (answer == 1) {
       cout << attendance[i] << "is present.\n\n";
-    } else {
+    } else if (answer == 0) {
       cout << attendance[i] << "is absent.\n\n";
+    } else {
+      cout << "Invalid input. Please enter 1 or 0.\n\n";
     }
   }
   
+  MyFile.close();
   return 0;
 }
